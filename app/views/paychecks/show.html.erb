@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @paycheck.employee_id %>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @paycheck.schedule_id %>
+</p>
+
+<p>
+  <strong>Units:</strong>
+  <%= @paycheck.units %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @paycheck.date %>
+</p>
+
+<p>
+  <strong>Gross:</strong>
+  <%= @paycheck.gross %>
+</p>
+
+<p>
+  <strong>Css:</strong>
+  <%= @paycheck.css %>
+</p>
+
+<p>
+  <strong>Cmc:</strong>
+  <%= @paycheck.cmc %>
+</p>
+
+<p>
+  <strong>Net:</strong>
+  <%= @paycheck.net %>
+</p>
+
+<p>
+  <strong>Fit:</strong>
+  <%= @paycheck.fit %>
+</p>
+
+<p>
+  <strong>Ess:</strong>
+  <%= @paycheck.ess %>
+</p>
+
+<p>
+  <strong>Emc:</strong>
+  <%= @paycheck.emc %>
+</p>
+
+<p>
+  <strong>Check no:</strong>
+  <%= @paycheck.check_no %>
+</p>
+
+<p>
+  <strong>Issued:</strong>
+  <%= @paycheck.issued %>
+</p>
+
+<%= link_to 'Edit', edit_paycheck_path(@paycheck) %> |
+<%= link_to 'Back', paychecks_path %>

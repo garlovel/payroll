@@ -1,0 +1,51 @@
+<h1>Listing paychecks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Schedule</th>
+      <th>Units</th>
+      <th>Date</th>
+      <th>Gross</th>
+      <th>Css</th>
+      <th>Cmc</th>
+      <th>Net</th>
+      <th>Fit</th>
+      <th>Ess</th>
+      <th>Emc</th>
+      <th>Check no</th>
+      <th>Issued</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paychecks.each do |paycheck| %>
+      <tr>
+        <td><%= paycheck.employee_id %></td>
+        <td><%= paycheck.schedule_id %></td>
+        <td><%= paycheck.units %></td>
+        <td><%= paycheck.date %></td>
+        <td><%= paycheck.gross %></td>
+        <td><%= paycheck.css %></td>
+        <td><%= paycheck.cmc %></td>
+        <td><%= paycheck.net %></td>
+        <td><%= paycheck.fit %></td>
+        <td><%= paycheck.ess %></td>
+        <td><%= paycheck.emc %></td>
+        <td><%= paycheck.check_no %></td>
+        <td><%= paycheck.issued %></td>
+        <td><%= link_to 'Show', paycheck %></td>
+        <td><%= link_to 'Edit', edit_paycheck_path(paycheck) %></td>
+        <td><%= link_to 'Destroy', paycheck, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Paycheck', new_paycheck_path %>

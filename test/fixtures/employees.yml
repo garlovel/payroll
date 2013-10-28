@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  employee_type: MyString
+  full_name: MyString
+  status: MyString
+  exemptions: 1
+  additional: 9.99
+
+two:
+  employee_type: MyString
+  full_name: MyString
+  status: MyString
+  exemptions: 1
+  additional: 9.99

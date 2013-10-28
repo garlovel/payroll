@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  code: MyString
+  description: MyString
+  period: MyString
+  factor: 1.5
+  rate: 9.99
+
+two:
+  code: MyString
+  description: MyString
+  period: MyString
+  factor: 1.5
+  rate: 9.99

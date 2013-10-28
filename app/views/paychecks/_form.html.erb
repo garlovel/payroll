@@ -1,0 +1,69 @@
+<%= form_for(@paycheck) do |f| %>
+  <% if @paycheck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paycheck.errors.count, "error") %> prohibited this paycheck from being saved:</h2>
+
+      <ul>
+      <% @paycheck.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :employee_id %><br>
+    <%= f.number_field :employee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :schedule_id %><br>
+    <%= f.number_field :schedule_id %>
+  </div>
+  <div class="field">
+    <%= f.label :units %><br>
+    <%= f.number_field :units %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :gross %><br>
+    <%= f.text_field :gross %>
+  </div>
+  <div class="field">
+    <%= f.label :css %><br>
+    <%= f.text_field :css %>
+  </div>
+  <div class="field">
+    <%= f.label :cmc %><br>
+    <%= f.text_field :cmc %>
+  </div>
+  <div class="field">
+    <%= f.label :net %><br>
+    <%= f.text_field :net %>
+  </div>
+  <div class="field">
+    <%= f.label :fit %><br>
+    <%= f.text_field :fit %>
+  </div>
+  <div class="field">
+    <%= f.label :ess %><br>
+    <%= f.text_field :ess %>
+  </div>
+  <div class="field">
+    <%= f.label :emc %><br>
+    <%= f.text_field :emc %>
+  </div>
+  <div class="field">
+    <%= f.label :check_no %><br>
+    <%= f.number_field :check_no %>
+  </div>
+  <div class="field">
+    <%= f.label :issued %><br>
+    <%= f.date_select :issued %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
