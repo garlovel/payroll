@@ -15,3 +15,7 @@
 
 // import original bootstrap
 @import "twitter/bootstrap";
+
+.container-fluid{
+  padding: 10px 20px;
+}

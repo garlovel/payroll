@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131027170556) do
+ActiveRecord::Schema.define(version: 20131029022345) do
 
   create_table "employees", force: true do |t|
     t.string   "employee_type"
@@ -35,8 +35,19 @@ ActiveRecord::Schema.define(version: 20131027170556) do
     t.decimal  "fit",         precision: 15, scale: 0
     t.decimal  "ess",         precision: 15, scale: 0
     t.decimal  "emc",         precision: 15, scale: 0
+    t.decimal  "rate",        precision: 15, scale: 0
     t.integer  "check_no"
     t.date     "issued"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rates", force: true do |t|
+    t.string   "period"
+    t.decimal  "bracket",    precision: 10, scale: 0
+    t.decimal  "base",       precision: 10, scale: 0
+    t.float    "rate"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

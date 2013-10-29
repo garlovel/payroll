@@ -12,6 +12,7 @@ class CreatePaychecks < ActiveRecord::Migration
       t.decimal :fit, :precision => 15, :length => 2
       t.decimal :ess, :precision => 15, :length => 2
       t.decimal :emc, :precision => 15, :length => 2
+      t.decimal :rate, :precision => 15, :length => 2
       t.integer :check_no
       t.date :issued
 

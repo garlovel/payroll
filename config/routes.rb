@@ -1,5 +1,10 @@
 Payroll::Application.routes.draw do
-  resources :paychecks
+
+  resources :paychecks do
+    collection do
+      post "update_amounts"
+    end
+  end
 
   resources :schedules
 

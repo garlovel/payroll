@@ -10,60 +10,78 @@
       </ul>
     </div>
   <% end %>
+  <div class="clearfix"></div>
+  <div class="row-fluid">
+    <div class="form-group col-md-3 col-sm-4">
+      <%= f.label :employee_id %>
+      <%= f.collection_select :employee_id, Employee.all, :id, :full_name, {}, {:class => "form-control span12"} %>
+    </div>
+    <div class="form-group col-md-3 col-sm-4">
+      <%= f.label :schedule_id %><br>
+      <%= f.collection_select :schedule_id, Schedule.all, :id, :code, {}, {:class => "form-control"} %>
+    </div>
+    <div class="form-group col-md-3 col-sm-4">
+      <%= f.label :units %><br>
+      <%= f.number_field :units, :class => "form-control" %>
+    </div>
+    <div class="form-group col-md-3 col-sm-4">
+      <%= f.label :rate %><br>
+      <%= f.number_field :rate, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="row-fluid">
+    <div class="form-group col-md-3 col-sm-4">
+      <%= f.label :check_no %><br>
+      <%= f.number_field :check_no, :class => "form-control" %>
+    </div>
+    <div class="form-group col-md-3 col-sm-4">
+      <%= f.label :date, "Posting Date" %><br>
+      <%= f.date_select :date, :class => "form-control" %>
+    </div>
+    <div class="form-group col-md-3 col-sm-4">
+      <%= f.label :issued %><br>
+      <%= f.date_select :issued, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row-fluid clearfix">
+    <div class="form-group col-md-3 col-sm-3">
+      <%= f.label :gross %><br>
+      <p class="form-control-static gross"></p>
+    </div>
+    <div class="form-group col-md-3 col-sm-3">
+      <%= f.label :css, "CSS" %><br>
+      <p class="form-control-static css"></p>
+    </div>
+    <div class="form-group col-md-3 col-sm-3">
+      <%= f.label :cmc, "CMC" %><br>
+      <p class="form-control-static cmc"></p>
+    </div>
+    <div class="form-group col-md-3 col-sm-3">
+      <%= f.label :net %><br>
+      <p class="form-control-static net"></p>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row-fluid clearfix">
+    <div class="form-group col-md-3 col-sm-3">
+      <%= f.label :fit, "FIT" %><br>
+      <p class="form-control-static fit"></p>
+    </div>
+    <div class="form-group col-md-3 col-sm-3">
+      <%= f.label :ess, "ESS" %><br>
+      <p class="form-control-static ess"></p>
+    </div>
+    <div class="form-group col-md-3 col-sm-3">
+      <%= f.label :emc, "EMC" %><br>
+      <p class="form-control-static emc"></p>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :employee_id %><br>
-    <%= f.number_field :employee_id %>
-  </div>
-  <div class="field">
-    <%= f.label :schedule_id %><br>
-    <%= f.number_field :schedule_id %>
-  </div>
-  <div class="field">
-    <%= f.label :units %><br>
-    <%= f.number_field :units %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :gross %><br>
-    <%= f.text_field :gross %>
-  </div>
-  <div class="field">
-    <%= f.label :css %><br>
-    <%= f.text_field :css %>
-  </div>
-  <div class="field">
-    <%= f.label :cmc %><br>
-    <%= f.text_field :cmc %>
-  </div>
-  <div class="field">
-    <%= f.label :net %><br>
-    <%= f.text_field :net %>
-  </div>
-  <div class="field">
-    <%= f.label :fit %><br>
-    <%= f.text_field :fit %>
-  </div>
-  <div class="field">
-    <%= f.label :ess %><br>
-    <%= f.text_field :ess %>
-  </div>
-  <div class="field">
-    <%= f.label :emc %><br>
-    <%= f.text_field :emc %>
-  </div>
-  <div class="field">
-    <%= f.label :check_no %><br>
-    <%= f.number_field :check_no %>
-  </div>
-  <div class="field">
-    <%= f.label :issued %><br>
-    <%= f.date_select :issued %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row-fluid clearfix">
+    <div class="actions">
+      <%= f.submit "Create Paycheck", :class => "btn btn-success" %>  
+      <%= link_to 'Cancel', paychecks_path, :class => "btn btn-default" %>
+    </div>
   </div>
 <% end %>

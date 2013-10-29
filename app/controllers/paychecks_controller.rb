@@ -60,6 +60,23 @@ class PaychecksController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def update_amounts
+    puts params.inspect
+    units = params[:units].to_f
+    rate = params[:rate].to_f
+    schedule = Schedule.find(params[:schedule])
+    employee = Employee.find(params[:employee])
+    period = schedule.period.downcase
+    factor = schedule.factor.to_f
+    puts "#{units} #{rate} #{factor}"
+    @gross = units*rate/factor
+    rate = Rate.where(:period => period).where(:status => employee.status.downcase).last
+
+    respond_to do |format|
+      format.js
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +86,6 @@ class PaychecksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paycheck_params
-      params.require(:paycheck).permit(:employee_id, :schedule_id, :units, :date, :gross, :css, :cmc, :net, :fit, :ess, :emc, :check_no, :issued)
+      params.require(:paycheck).permit(:employee_id, :schedule_id, :units, :date, :gross, :css, :cmc, :net, :fit, :ess, :emc, :check_no, :issued, :rate)
     end
 end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  period: MyString
+  bracket: 9.99
+  base: 9.99
+  rate: 1.5
+  status: MyString
+
+two:
+  period: MyString
+  bracket: 9.99
+  base: 9.99
+  rate: 1.5
+  status: MyString
