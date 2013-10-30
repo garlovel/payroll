@@ -1,5 +1,5 @@
 class Schedule < ActiveRecord::Base
-  has_many :schedules
+  has_many :employees
   
   validates_uniqueness_of :code
 end

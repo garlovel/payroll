@@ -6,17 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Create the Schedules and Employees from our sample spreadsheet data
-#schedules = Schedule.create!([
-#                {:code => "IIN-W", :description => "Intern internal weekly", :period => "WEEKLY", :factor => 1, :rate => 12.5}, 
-#                {:code => "PIN-S", :description => "Programmer internal semi-monthly", :period => "SEMI-M", :factor => 1, :rate => 2000}, 
-#                {:code => "CIN-M", :description => "Consultant internal monthly", :period => "MONTHLY", :factor => 1.0765, :rate => 6000}])
-                
-#employees = Employee.create!([
-#                {:employee_type => "JUNIOR", :full_name => "Junior Programmer", :status => "Single", :exemptions => 0, :additional => 5},
-#                {:employee_type => "SENIOR", :full_name => "Senior Programmer", :status => "Married", :exemptions => 2, :additional => 0},
-#                {:employee_type => "BOSS", :full_name => "Head Consultant", :status => "Married", :exemptions => 4, :additional => 0}])
-
 # Create data for the IRS tax rate tables                
 rates =  Rate.create!([
                 {:period => "weekly", :status => "single", :bracket => 0, :base => 0, :rate => 0},

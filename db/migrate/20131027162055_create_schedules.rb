@@ -6,7 +6,8 @@ class CreateSchedules < ActiveRecord::Migration
       t.string :period
       t.float :factor
       t.decimal :rate, :precision => 15, :length => 2
-
+      t.integer :occur
+      
       t.timestamps
     end
   end

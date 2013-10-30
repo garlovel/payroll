@@ -14,11 +14,12 @@
 ActiveRecord::Schema.define(version: 20131029022345) do
 
   create_table "employees", force: true do |t|
-    t.string   "employee_type"
+    t.string   "employee_identifier"
     t.string   "full_name"
     t.string   "status"
     t.integer  "exemptions"
-    t.decimal  "additional",    precision: 15, scale: 0
+    t.decimal  "additional",          precision: 15, scale: 0
+    t.integer  "schedule_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20131029022345) do
     t.string   "period"
     t.float    "factor"
     t.decimal  "rate",        precision: 15, scale: 0
+    t.integer  "occur"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -62,17 +62,32 @@ class PaychecksController < ApplicationController
   end
   
   def update_amounts
+    allowance = 3900
+    ss_tax_rate = 0.0620
+    mc_tax_rate = 0.0145
     puts params.inspect
     units = params[:units].to_f
-    rate = params[:rate].to_f
+    pay_rate = params[:rate].to_f
     schedule = Schedule.find(params[:schedule])
     employee = Employee.find(params[:employee])
     period = schedule.period.downcase
     factor = schedule.factor.to_f
-    puts "#{units} #{rate} #{factor}"
-    @gross = units*rate/factor
-    rate = Rate.where(:period => period).where(:status => employee.status.downcase).last
-
+    puts "#{units} #{pay_rate} #{factor}"
+    @gross = (units*pay_rate/factor).round(2)
+    @css = (@gross*ss_tax_rate).round(2)
+    @cmc = (@gross*mc_tax_rate).round(2)
+    @ess = (@gross*ss_tax_rate).round(2)
+    @emc = (@gross*mc_tax_rate).round(2)
+    tax_rate_group = Rate.where(:period => period).where(:status => employee.status.downcase).all
+    tax_rate_group.each do |tax_rate|
+      if tax_rate.bracket <= @gross
+        @tax_rate = tax_rate
+        puts @tax_rate.inspect
+      end
+    end
+    taxable = (@gross - employee.exemptions * allowance / schedule.occur).round(0)
+    @fit = @tax_rate.base + (taxable - @tax_rate.bracket) * (@tax_rate.rate + employee.additional*0.01)
+    @net = @gross - (@fit + @ess + @emc)
     respond_to do |format|
       format.js
     end
