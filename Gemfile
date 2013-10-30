@@ -24,7 +24,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -50,3 +49,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Make assets work correctly on heroku in production
+gem 'rails_12factor', group: :production
