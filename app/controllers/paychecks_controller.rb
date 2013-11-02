@@ -73,7 +73,8 @@ class PaychecksController < ApplicationController
     period = schedule.period.downcase
     factor = schedule.factor.to_f
     puts "#{units} #{pay_rate} #{factor}"
-    @gross = (units*pay_rate/factor).round(2)
+    @gross = (units*pay_rate/factor)
+    @groos.round(2)
     @css = (@gross*ss_tax_rate).round(2)
     @cmc = (@gross*mc_tax_rate).round(2)
     @ess = (@gross*ss_tax_rate).round(2)
@@ -82,11 +83,10 @@ class PaychecksController < ApplicationController
     tax_rate_group.each do |tax_rate|
       if tax_rate.bracket <= @gross
         @tax_rate = tax_rate
-        puts @tax_rate.inspect
       end
     end
     taxable = (@gross - employee.exemptions * allowance / schedule.occur).round(0)
-    @fit = @tax_rate.base + (taxable - @tax_rate.bracket) * (@tax_rate.rate + employee.additional*0.01)
+    @fit = @tax_rate.base + (taxable - @tax_rate.bracket) * (@tax_rate.rate + employee.additional)
     @net = @gross - (@fit + @ess + @emc)
     respond_to do |format|
       format.js

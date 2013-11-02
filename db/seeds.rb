@@ -8,8 +8,8 @@
 
 # Create data for the IRS tax rate tables                
 rates =  Rate.create!([
-                {:period => "weekly", :status => "single", :bracket => 0, :base => 0, :rate => 0},
                 {:period => "weekly", :status => "single", :bracket => 42, :base => 0, :rate => 0.1},
+                {:period => "weekly", :status => "single", :bracket => 0, :base => 0, :rate => 0},
                 {:period => "weekly", :status => "single", :bracket => 214, :base => 17.2, :rate => 0.15},
                 {:period => "weekly", :status => "single", :bracket => 739, :base => 95.95, :rate => 0.25},
                 {:period => "weekly", :status => "single", :bracket => 1732, :base => 344.2, :rate => 0.28},
