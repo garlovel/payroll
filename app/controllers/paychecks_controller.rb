@@ -82,7 +82,6 @@ class PaychecksController < ApplicationController
     tax_rate_group.each do |tax_rate|
       if tax_rate.bracket <= @gross
         @tax_rate = tax_rate
-        puts @tax_rate.inspect
       end
     end
     taxable = (@gross - employee.exemptions * allowance / schedule.occur).round(0)

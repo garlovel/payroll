@@ -25,17 +25,17 @@
   <tbody>
     <% @paychecks.each do |paycheck| %>
       <tr>
-        <td><%= paycheck.employee_id %></td>
-        <td><%= paycheck.schedule_id %></td>
+        <td><%= Employee.find(paycheck.employee_id).full_name %></td>
+        <td><%= Schedule.find(paycheck.schedule_id).code %></td>
         <td><%= paycheck.units %></td>
         <td><%= paycheck.date %></td>
-        <td><%= paycheck.gross %></td>
-        <td><%= paycheck.css %></td>
-        <td><%= paycheck.cmc %></td>
-        <td><%= paycheck.net %></td>
-        <td><%= paycheck.fit %></td>
-        <td><%= paycheck.ess %></td>
-        <td><%= paycheck.emc %></td>
+        <td><%= number_to_currency(paycheck.gross) %></td>
+        <td><%= number_to_currency(paycheck.css) %></td>
+        <td><%= number_to_currency(paycheck.cmc) %></td>
+        <td><%= number_to_currency(paycheck.net) %></td>
+        <td><%= number_to_currency(paycheck.fit) %></td>
+        <td><%= number_to_currency(paycheck.ess) %></td>
+        <td><%= number_to_currency(paycheck.emc) %></td>
         <td><%= paycheck.check_no %></td>
         <td><%= paycheck.issued %></td>
         <td><%= link_to 'Show', paycheck %></td>
