@@ -1,9 +1,9 @@
-<h1>Listing employees</h1>
+<h1>Listing Employees</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Employee type</th>
+      <th>Employee Identifier</th>
       <th>Full name</th>
       <th>Status</th>
       <th>Exemptions</th>
@@ -17,11 +17,11 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= employee.employee_type %></td>
+        <td><%= employee.employee_identifier %></td>
         <td><%= employee.full_name %></td>
         <td><%= employee.status %></td>
         <td><%= employee.exemptions %></td>
-        <td><%= employee.additional %></td>
+        <td><%= employee.additional %>%</td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
         <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>

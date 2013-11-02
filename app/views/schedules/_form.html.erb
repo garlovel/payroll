@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :code %><br>
-    <%= f.text_field :code %>
+    <%= f.text_field :code, :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :period %><br>
-    <%= f.text_field :period %>
+    <%= f.select :period, [["WEEKLY", "WEEKLY"], ["BI-WEEKLY", "BI-WEEKLY"], ["SEMI-MONTHLY", "SEMI-MONTHLY"], ["MONTHLY", "MONTHLY"]], :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :factor %><br>
-    <%= f.text_field :factor %>
+    <%= f.text_field :factor, :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :rate %><br>
-    <%= f.text_field :rate %>
+    <%= f.text_field :rate, :class => "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save Schedule", :class => "btn btn-success" %>
   </div>
 <% end %>

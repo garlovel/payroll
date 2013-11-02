@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :employee_type %><br>
-    <%= f.text_field :employee_type %>
+  <div class="form-group">
+    <%= f.label :employee_identifier %><br>
+    <%= f.text_field :employee_identifier, :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :full_name %><br>
-    <%= f.text_field :full_name %>
+    <%= f.text_field :full_name, :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.text_field :status, :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :exemptions %><br>
-    <%= f.number_field :exemptions %>
+    <%= f.number_field :exemptions, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :additional %><br>
-    <%= f.text_field :additional %>
+  <div class="form-group">
+    <%= f.label :additional, "Additional % Withholding" %><br>
+    <%= f.text_field :additional, :class => "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save Employee", :class => "btn btn-success" %>
   </div>
 <% end %>
